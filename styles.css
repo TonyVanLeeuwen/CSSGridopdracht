@@ -1,1 +1,10 @@
 /*Maak hier jouw CSS!*/
+
+.container{
+    justify-content: center;
+    align-content: center;
+}
+
+.item{
+ display: flex;
+}
