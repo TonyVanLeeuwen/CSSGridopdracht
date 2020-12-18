@@ -1,10 +1,18 @@
 /*Maak hier jouw CSS!*/
 
-.container{
-    justify-content: center;
-    align-content: center;
+.container {
+    display: grid;
+    column-gap: 16px;
+    row-gap: 16px;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
-.item{
- display: flex;
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: palevioletred;
 }
+
