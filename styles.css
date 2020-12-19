@@ -5,20 +5,18 @@
     padding: 0;
 }
 
-.container{
-    display: grid;
+.container {
     background-color: pink;
-    gap: 16px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px auto 300px 50px;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
     grid-template-areas:
-                        "header"
-                        "content"
-                        "aside"
-                        "smaller-aside"
-                        "even-smaller-aside"
-                        "."
-                        "footer";
+                        "header aside aside"
+                        "content aside aside"
+                        "content even-smaller-aside smaller-aside"
+                        "footer footer footer";
 }
 
 .item {
@@ -55,18 +53,30 @@
     grid-area: footer;
 }
 
-@media screen and (min-width: 800px) {
-    .container {
-        background-color: pink;
+@media screen and (max-device-width:640px), screen and (max-width:640px) {
+    .container{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 50px auto 300px 50px;
-        grid-column-gap: 16px;
-        grid-row-gap: 16px;
+        background-color: pink;
+        /*grid-column-gap: 16px;*/
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
         grid-template-areas:
-                        "header aside aside"
-                        "content aside aside"
-                        "content even-smaller-aside smaller-aside"
-                        "footer footer footer";
+                        "header"
+                        "content"
+                        "aside"
+                        "smaller-aside"
+                        "even-smaller-aside"
+                        "."
+                        "footer";
     }
+
+
+    #item-d{
+        align-content: center;
+        justify-content: center;
+        column-gap: 16px;
+        height: 50px;
+        grid-area: smaller-aside;
+    }
+
 }
