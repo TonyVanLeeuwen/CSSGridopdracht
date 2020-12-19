@@ -1,1 +1,82 @@
 /*Maak hier jouw CSS!*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: pink;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px auto 300px 50px;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-areas:
+                        "header aside aside"
+                        "content aside aside"
+                        "content even-smaller-aside smaller-aside"
+                        "footer footer footer";
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: palevioletred;
+    border: 2px solid hsl(288, 100%, 50%);
+}
+
+#item-a {
+    grid-area: header;
+}
+
+#item-b {
+    grid-area: content;
+}
+
+#item-c {
+    grid-area: aside;
+}
+
+#item-d {
+    align-self: start;
+    height: 100px; /*wss niet de beste oplossing*/
+    grid-area: smaller-aside;
+}
+
+#item-e {
+    grid-area: even-smaller-aside;
+}
+
+#item-f {
+    grid-area: footer;
+}
+
+@media screen and (max-device-width: 640px), screen and (max-width: 640px) {
+    .container {
+        display: grid;
+        background-color: pink;
+        /*grid-column-gap: 16px;*/
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-areas:
+                        "header"
+                        "content"
+                        "aside"
+                        "smaller-aside"
+                        "even-smaller-aside"
+                        "."
+                        "footer";
+    }
+
+
+    #item-d {
+        align-content: center;
+        justify-content: center;
+        column-gap: 16px;
+        height: 50px;
+        grid-area: smaller-aside;
+    }
+
+}
