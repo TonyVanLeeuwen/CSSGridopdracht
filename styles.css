@@ -1,6 +1,6 @@
 /*Maak hier jouw CSS!*/
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
@@ -27,34 +27,34 @@
     border: 2px solid hsl(288, 100%, 50%);
 }
 
-#item-a{
+#item-a {
     grid-area: header;
 }
 
-#item-b{
+#item-b {
     grid-area: content;
 }
 
-#item-c{
+#item-c {
     grid-area: aside;
 }
 
-#item-d{
+#item-d {
     align-self: start;
     height: 100px; /*wss niet de beste oplossing*/
     grid-area: smaller-aside;
 }
 
-#item-e{
+#item-e {
     grid-area: even-smaller-aside;
 }
 
-#item-f{
+#item-f {
     grid-area: footer;
 }
 
-@media screen and (max-device-width:640px), screen and (max-width:640px) {
-    .container{
+@media screen and (max-device-width: 640px), screen and (max-width: 640px) {
+    .container {
         display: grid;
         background-color: pink;
         /*grid-column-gap: 16px;*/
@@ -71,7 +71,7 @@
     }
 
 
-    #item-d{
+    #item-d {
         align-content: center;
         justify-content: center;
         column-gap: 16px;
