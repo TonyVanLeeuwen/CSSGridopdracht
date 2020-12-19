@@ -5,18 +5,20 @@
     padding: 0;
 }
 
-.container {
-    background-color: pink;
+.container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 50px auto 300px 50px;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    background-color: pink;
+    gap: 16px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
     grid-template-areas:
-                        "header aside aside"
-                        "content aside aside"
-                        "content even-smaller-aside smaller-aside"
-                        "footer footer footer";
+                        "header"
+                        "content"
+                        "aside"
+                        "smaller-aside"
+                        "even-smaller-aside"
+                        "."
+                        "footer";
 }
 
 .item {
@@ -40,7 +42,8 @@
 }
 
 #item-d{
-
+    align-self: start;
+    height: 100px; /*wss niet de beste oplossing*/
     grid-area: smaller-aside;
 }
 
@@ -50,4 +53,20 @@
 
 #item-f{
     grid-area: footer;
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        background-color: pink;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px auto 300px 50px;
+        grid-column-gap: 16px;
+        grid-row-gap: 16px;
+        grid-template-areas:
+                        "header aside aside"
+                        "content aside aside"
+                        "content even-smaller-aside smaller-aside"
+                        "footer footer footer";
+    }
 }
